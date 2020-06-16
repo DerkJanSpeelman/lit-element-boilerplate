@@ -1,57 +1,71 @@
-import { LitElement, html, css, property } from 'lit-element';
+import {
+    CSSResult,
+    LitElement,
+    TemplateResult,
+    css,
+    html,
+    property,
+} from 'lit-element';
+
 import { openWcLogo } from './open-wc-logo.js';
 
 export class MyApp extends LitElement {
-    @property({ type: String }) page = 'main';
+    @property({ type: String })
+    public page: string = 'main';
 
-    @property({ type: String }) title = '';
+    @property({ type: String })
+    public title: string = '';
 
-    static styles = css`
-        :host {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            font-size: calc(10px + 2vmin);
-            color: #1a2b42;
-            max-width: 960px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        main {
-            flex-grow: 1;
-        }
-
-        .logo > svg {
-            margin-top: 36px;
-            animation: app-logo-spin infinite 20s linear;
-        }
-
-        @keyframes app-logo-spin {
-            from {
-                transform: rotate(0deg);
+    public static get styles(): CSSResult {
+        return css`
+            :host {
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                font-size: calc(10px + 2vmin);
+                color: #1a2b42;
+                max-width: 960px;
+                margin: 0 auto;
+                text-align: center;
             }
-            to {
-                transform: rotate(360deg);
+
+            main {
+                flex-grow: 1;
             }
-        }
 
-        .app-footer {
-            font-size: calc(12px + 0.5vmin);
-            align-items: center;
-        }
+            .logo > svg {
+                margin-top: 36px;
+                animation: app-logo-spin infinite 20s linear;
+            }
 
-        .app-footer a {
-            margin-left: 5px;
-        }
-    `;
+            @keyframes app-logo-spin {
+                from {
+                    transform: rotate(0deg);
+                }
+                to {
+                    transform: rotate(360deg);
+                }
+            }
 
-    render() {
+            .app-footer {
+                font-size: calc(12px + 0.5vmin);
+                align-items: center;
+            }
+
+            .app-footer a {
+                margin-left: 5px;
+            }
+        `;
+    }
+
+    public render: () => TemplateResult = (): TemplateResult => {
         return html`
             <main>
-                <div class="logo">${openWcLogo}</div>
+                <div class="logo">
+                    ${openWcLogo}
+                </div>
                 <h1>My app</h1>
 
                 <p>Edit <code>src/MyApp.js</code> and save to reload.</p>
@@ -75,5 +89,7 @@ export class MyApp extends LitElement {
                 >.
             </p>
         `;
-    }
+    };
 }
+
+window.customElements.define('my-app', MyApp);

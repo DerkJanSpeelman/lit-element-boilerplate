@@ -1,6 +1,6 @@
-import { html } from 'lit-html';
+import { TemplateResult, html } from 'lit-element';
 
-export const openWcLogo = html`
+export const openWcLogo: TemplateResult = html`
     <svg
         width="244px"
         height="244px"
