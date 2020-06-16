@@ -7,6 +7,7 @@
  - ESlint + Prettier
  - Storybook
  - Pre-commit hook (lint-staged)
+ - Follows open-wc recommendations
  - es-dev-server
 
 Known issues (in `src/tests/my-app.test.ts` only). Just a TypeScript thing:
