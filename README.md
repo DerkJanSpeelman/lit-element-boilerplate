@@ -6,7 +6,7 @@
  - Karma
  - ESlint + Prettier
  - Storybook
- - Pre-commit linter
+ - Pre-commit hook (lint-staged)
  - es-dev-server
 
 Known issues (in `src/tests/my-app.test.ts` only). Just a TypeScript thing:
