@@ -1,4 +1,13 @@
-# Solar System
+# LitElement Boilerplate
+
+ - LitElement
+ - TypeScript
+ - Rollup
+ - Karma
+ - ESlint + Prettier
+ - Storybook
+ - Pre-commit linter
+ - es-dev-server
 
 Known issues (in `src/tests/my-app.test.ts` only). Just a TypeScript thing:
 
