@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 const { createDefaultConfig } = require('@open-wc/testing-karma');
 const merge = require('deepmerge');
 
@@ -13,7 +14,7 @@ module.exports = config => {
                 {
                     pattern: config.grep
                         ? config.grep
-                        : 'dist/**/tests/**/*.test.js',
+                        : 'out-tsc/**/test/**/*.test.js',
                     type: 'module',
                 },
             ],

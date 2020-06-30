@@ -1,6 +1,10 @@
 module.exports = {
     root: true,
     parser: '@typescript-eslint/parser',
+    env: {
+        node: true,
+        mocha: true,
+    },
     plugins: [
         '@typescript-eslint',
         'babel',
@@ -27,12 +31,25 @@ module.exports = {
         'plugin:lit/recommended',
     ],
     rules: {
-        '@typescript-eslint/no-non-null-assertion': 'warn',
+        '@typescript-eslint/no-non-null-assertion': 'error',
+        '@typescript-eslint/typedef': 'error',
+        '@typescript-eslint/explicit-member-accessibility': 'error',
+        '@typescript-eslint/no-inferrable-types': 'off',
+        'no-unused-vars': 'off',
+        '@typescript-eslint/no-unused-vars': 'error',
         'import/named': 'off',
         'import/no-unresolved': 'off',
         'import/extensions': ['error', 'always', { ignorePackages: true }],
-        '@typescript-eslint/no-inferrable-types': 'off',
         'unicorn/filename-case': 'off',
         indent: ['error', 4],
     },
+    overrides: [
+        {
+            files: ['**.test.ts'],
+            rules: {
+                'no-unused-expressions': 'off',
+                '@typescript-eslint/no-non-null-assertion': 'off',
+            },
+        },
+    ],
 };
